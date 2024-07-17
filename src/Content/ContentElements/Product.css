@@ -1,0 +1,34 @@
+/* Product.css */
+
+.Product {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    border: 1px solid #494848;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Product img {
+    max-height: 70%;
+    justify-content: center;
+    margin-bottom: 20px; /*Possible problem with height. Dont know how to make it equal to the width*/
+    /*otkacham tuka ima nekyw space otdolu w kontainera nqqm ideq kak da go mahna*/
+}
+
+.product-details {
+    margin-top: 10px;
+}
+
+.product-details h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.product-details p {
+    margin: 0;
+    font-size: 14px;
+}
