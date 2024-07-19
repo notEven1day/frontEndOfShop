@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Product from './ContentElements/Product';
 import './Content.css';
+import SideNavigation from "./ContentElements/SideNavigation";
 
 const Content = () => {
     const [products, setProducts] = useState([]);
@@ -78,6 +79,8 @@ const Content = () => {
 
 
     return (
+        <div className="ContentPlusNav">
+        <SideNavigation/>
         <div className="Content">
             {products.map(product => (
                 <Product
@@ -88,7 +91,9 @@ const Content = () => {
                 />
             ))}
         </div>
+        </div>
     );
+    //you need to set the properties of the product when backend ready
 }
 
 export default Content;

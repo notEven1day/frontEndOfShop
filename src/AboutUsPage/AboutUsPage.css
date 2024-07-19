@@ -1,0 +1,56 @@
+/* AboutUsPage.css */
+
+/* Use a web-safe font family or Google Fonts for a better appearance */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.about-us-page {
+    background-color: #f2f2f2; /* Light gray background for the whole page */
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.about-us-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.about-us-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff; /* White background for content area */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #e0e0e0; /* Light gray background for container */
+}
+
+.about-us-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-us-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Optional: Import a Google Font for a more appealing look */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Apply the imported font to the body */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Optional: Add some spacing and style to the header if needed */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}

@@ -1,0 +1,15 @@
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 16px; /* Space between grid items */
+    padding: 16px; /* Padding around the grid */
+}
+
+.user-card {
+    background-color: #f1ca88;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}

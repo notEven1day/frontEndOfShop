@@ -8,8 +8,6 @@ const Home = () => {
         <Header/>
         <Content/>
         <Footer/>
-
-
     </div>
 }
 

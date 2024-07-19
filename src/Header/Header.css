@@ -6,12 +6,12 @@
     position: relative;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .Navbar {
-    margin-top: 5px;
-    width: 40%;
+    flex: 0.75;
+    padding-left: 75px;
 }
 
 .Navbar ul {

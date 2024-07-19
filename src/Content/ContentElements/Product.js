@@ -3,7 +3,7 @@ import React from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import './Product.css';
 
-function Product({ id, name, imageUrl, price }) {
+function Product({ id, name, description, price, categoryId, stockQuantity,imageUrl}) {
     const navigate = useNavigate()
 
     const productInfoPageRedirector=()=>{
