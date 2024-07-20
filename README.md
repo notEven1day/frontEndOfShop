@@ -43,9 +43,10 @@ expects all products in this format
             roomCategories: [],
             furnitureTypeCategories: []
 
-            var builder = WebApplication.CreateBuilder(args);
-
-<<<<<<<<<<// Add services to the container.
+            
+<<<<<<<<<<
+var builder = WebApplication.CreateBuilder(args);
+// Add services to the container.
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
