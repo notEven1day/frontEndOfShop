@@ -39,7 +39,7 @@ username:"Skara",
 firstName: "John", 
 lastName: "Doe", 
 email: "john.doe@example.com",
-phone: "123-456-7890",
+phoneNumber: "123-456-7890",
 profilePicUrl:"https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg",
 role: "ADMIN" }
 NOTE THAT PASSWORD IS MISSING!!!!! MIGHT NEED ANOTHER DTO
