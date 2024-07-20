@@ -44,6 +44,22 @@ profilePicUrl:"https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_Q
 role: "ADMIN" }
 NOTE THAT PASSWORD IS MISSING!!!!! MIGHT NEED ANOTHER DTO
 
+endpoint 
+/users/me
+GET
+gets a token in the header(needs validation)
+if token correct return current logged user info in this format
+id:"",
+        username:"",
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        profilePicUrl:"",
+        role: "ADMIN",
+        cartId: "",
+      else return error token expired or something
+
 
 endpoint 
 /users/deleteUser
