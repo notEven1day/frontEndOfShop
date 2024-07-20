@@ -30,6 +30,26 @@ need to create userLogin dto with those fields
 implement some logic so you check first with username then with email 
 expects jwt token if successfull or null/empty string response
 
+endpoint
+/users/getAllUsers
+GET 
+expects list of all users in following format 
+{ id: 1,
+username:"Skara",
+firstName: "John", 
+lastName: "Doe", 
+email: "john.doe@example.com",
+phone: "123-456-7890",
+profilePicUrl:"https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg",
+role: "ADMIN" }
+
+
+endpoint 
+/users/deleteUser
+DELETE
+ JSON.stringify({ id }),
+ expects ok response if succesful  search for user in the database with given id and remove him
+ 
 
 endpoint
 /product/getAllProducts
