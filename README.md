@@ -97,3 +97,45 @@ app.UseHttpsRedirection();
 app.MapControllers();
 
 app.Run();>>>>>>>>>>>> put something like this so JSON objects follow the correct naming format (look line 38 prodcutID not ProductId) id doesnt work I will fix it on my end
+
+
+/cart/getCartById
+POST
+cartId: cartId
+expects a json response in this format 
+    cartId: 1,
+    cartItems: [
+        {
+            cartItemId:1,
+            product: {
+                id: 1,
+                name: "Product A",
+                imageUrl: "https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg",
+                price: 19.99
+            },
+            quantity: 2
+        },
+        {
+            cartItemId:2,
+            product: {
+                id: 2,
+                name: "Product B",
+                imageUrl: "https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg",
+                price: 29.99
+            },
+            quantity: 1
+        }]
+
+/cart/removeCartItem
+DELETE
+cartId: cartId,
+cartItemId: cartItemId
+expects an ok response 
+
+
+/cart/changeInProductItemQuantity
+POST
+cartId:cartId,
+cartItemId: id,
+quantity:updatedQuantity
+expects an ok response
