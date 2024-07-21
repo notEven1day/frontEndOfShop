@@ -1,0 +1,83 @@
+.product-info {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: 10px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.product-name {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.product-description {
+    color: #555;
+}
+
+.product-price {
+    font-size: 1.2em;
+    color: #000;
+    margin: 10px 0;
+}
+
+.product-stock {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.product-room-categories, .product-furniture-categories {
+    margin-top: 15px;
+}
+
+.product-room-categories h4, .product-furniture-categories h4 {
+    margin: 0 0 10px;
+}
+
+.product-room-categories ul, .product-furniture-categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-room-categories li, .product-furniture-categories li {
+    background: #f4f4f4;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.quantity-selector {
+    width: 60px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.add-to-cart-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+    background-color: #0056b3;
+}
