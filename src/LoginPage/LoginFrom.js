@@ -10,13 +10,13 @@ const LoginForm = () => {
     const navigate = useNavigate()
 
 
-    const [email, setEmail] = useState("")
+    const [usernameOrEmail, setUsernameOrEmail] = useState("")
     const  [password, setPassword] =useState("")
 
-    const handleEmailChange = (e) => {
+    const handleUsernameOrEmailChange = (e) => {
         // Validation
 
-        setEmail(e.target.value)
+        setUsernameOrEmail(e.target.value)
     }
 
     const handlePasswordChange = (e) =>{
@@ -30,14 +30,14 @@ const LoginForm = () => {
         localStorage.setItem("token",token);
         console.log(localStorage.getItem("token"))
         navigate(`/`);
-        // fetch('/login', {
+        // fetch('/user/login', {
         //     method: 'POST',
         //     headers: {
         //         'Content-Type': 'application/json'
         //         // "Authorization": `Bearer ${token}`
         //     },
         //     body: JSON.stringify({
-        //         email: email,
+        //         usernameOrEmail: usernameOrEmail,
         //         password: password
         //     })
         // })
@@ -61,8 +61,8 @@ const LoginForm = () => {
             <h2>Welcome to our shop!</h2>
             <form id="loginForm">
                 <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input onChange={handleEmailChange} type="text" id="email" name="email" required/>
+                    <label htmlFor="usernameOrEmail">Username or Email</label>
+                    <input onChange={handleUsernameOrEmailChange} type="text" id="usernameOrEmail" name="usernameOrEmail" required/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password</label>

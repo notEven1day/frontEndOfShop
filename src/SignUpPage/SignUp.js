@@ -6,9 +6,9 @@ import {Button} from "antd";
 const SignUp = () =>
 {
     const navigate = useNavigate()
+    const[username,setUsername]=useState("");
     const[firstName,setFirstName]=useState("");
     const [lastName, setLastName] = useState("");
-    const [address, setAddress] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -22,8 +22,8 @@ const SignUp = () =>
         setLastName(e.target.value);
     };
 
-    const handleAdressChange = (e) => {
-        setAddress(e.target.value);
+    const handleUsernameChange = (e) => {
+        setUsername(e.target.value);
     };
 
     const handlePasswordChange = (e) => {
@@ -42,18 +42,19 @@ const SignUp = () =>
     {
 
 
-            fetch('/signup', {
+            fetch('/user/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
+                    username: username,
+                    password: password,
                     firstName: firstName,
                     lastName: lastName,
                     email: email,
-                    phoneNumber: phoneNumber,
-                    adress: address,
-                    password: password
+                    phoneNumber: phoneNumber
+
                 })
             })
                 .then(response => {
@@ -71,6 +72,11 @@ const SignUp = () =>
             <h2>Sign Up</h2>
             <form action="/register" method="POST">
                 <div className="form-group">
+                    <label htmlFor="username">Username</label>
+                    <input onChange={handleUsernameChange} type="text" id="username" name="username" placeholder="Your username"
+                           required/>
+                </div>
+                <div className="form-group">
                     <label htmlFor="firstName">First Name</label>
                     <input onChange={handleFirstNameChange} type="text" id="firstName" name="firstName"
                            placeholder="Enter your first name" required/>
@@ -85,11 +91,7 @@ const SignUp = () =>
                     <input onChange={handlePasswordChange} type="text" id="password" name="password"
                            placeholder="Choose a password" required/>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="adress">Adress</label>
-                    <input onChange={handleAdressChange} type="text" id="adress" name="adress" placeholder="Your adress"
-                           required/>
-                </div>
+
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
                     <input onChange={handleEmailChange} type="text" id="email" name="email"
@@ -100,7 +102,8 @@ const SignUp = () =>
                     <input onChange={handlePhoneNumberChange} type="text" id="phoneNumber" name="phoneNumber"
                            placeholder="Enter your phone number"/>
                 </div>
-                <Button type="primary" onClick={handleSignUp} block={true} style={{ backgroundColor: '#28a745'}}>SignUp</Button>
+                <Button type="primary" onClick={handleSignUp} block={true}
+                        style={{backgroundColor: '#28a745'}}>SignUp</Button>
             </form>
 
         </div>

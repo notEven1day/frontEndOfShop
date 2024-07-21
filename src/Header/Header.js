@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { useDispatch } from 'react-redux';
+import {useNavigate} from "react-router-dom";
+import { setCartId } from '../../src/cartIdSlice';
 import './Header.css';
 import UserInfoContainer from "./UserInfoClickableContainerSidePopUp/UserInfoContainer";
 import AdminUserPageNavInNavbar from "../AdminUserPage/AdminUserPageNavInNavbar";
-import {useNavigate} from "react-router-dom";
+
 
 const Header = () =>{
-    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const handleHomeRedirection = () =>
     {
         navigate(`/`);
@@ -19,32 +23,39 @@ const Header = () =>{
         navigate(`/adminUserPage`);
     }
     const userDto = {
+        id:"",
+        username:"",
         firstName: "",
         lastName: "",
         email: "",
         phoneNumber: "",
-        address: "",
+        profilePicUrl:"",
         role: "ADMIN",
-        cart_id: ""
+        cartId: 7,
     };
 
-    fetch('/user/me', {
-        method: 'GET',
-        headers: {
-            "Authorization": `Bearer ${localStorage.getItem("token")}`
-        }
-    })
-        .then(response => response.json()) // Parse the JSON from the response
-        .then(data => {
-            userDto.firstName = data.firstName;
-            userDto.lastName = data.lastName;
-            userDto.email = data.email;
-            userDto.phoneNumber = data.phoneNumber;
-            userDto.address = data.address;
-            userDto.role=data.role;
-            userDto.cart_id=data.cart_id;
-        })
-        .catch(error => console.error('Error:', error));
+    // useEffect(() => {
+    //     fetch('/user/me', {
+    //         method: 'GET',
+    //         headers:     {
+    //             "Authorization": `Bearer ${localStorage.getItem("token")}`
+    //         }
+    //     })
+    //         .then(response => response.json()) //TO DO need to make a slice for whole current user
+    //         .then(data => {
+    //             userDto.id=data.id;
+    //             userDto.username=data.username;
+    //             userDto.firstName = data.firstName;
+    //             userDto.lastName = data.lastName;
+    //             userDto.email = data.email;
+    //             userDto.phoneNumber = data.phoneNumber;
+    //             userDto.profilePicUrl=data.profilePicUrl;
+    //             userDto.role = data.role;
+    //             dispatch(setCartId(data.cartId));
+    //             // might be a big problem tbh need to check later when backend ready
+    //         })
+    //         .catch(error => console.error('Error:', error));
+    // }, [dispatch]);
 
 
     return (

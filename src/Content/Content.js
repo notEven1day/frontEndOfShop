@@ -8,67 +8,104 @@ const Content = () => {
         //products is empty here
     const hardCodedArrayOfProducts = [
         {
-            id: 1,
+            productId: 1,
             name: 'ProductA',
             imageUrl: 'https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg',
-            price: 19.99
+            description: 'Description for ProductA',
+            price: 19.99,
+            stockQuantity: 100,
+            roomCategories: [], // Assume this would be populated with relevant data
+            furnitureTypeCategories: [] // Assume this would be populated with relevant data
         },
         {
-            id: 2,
+            productId: 2,
             name: 'ProductB',
             imageUrl: 'https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg',
-            price: 29.99
+            description: 'Description for ProductB',
+            price: 29.99,
+            stockQuantity: 100,
+            roomCategories: [],
+            furnitureTypeCategories: []
         },
         {
-            id: 3,
+            productId: 3,
             name: 'ProductC',
             imageUrl: 'https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg',
-            price: 24.99
+            description: 'Description for ProductC',
+            price: 24.99,
+            stockQuantity: 100,
+            roomCategories: [],
+            furnitureTypeCategories: []
         },
         {
-            id: 4,
+            productId: 4,
             name: 'ProductA',
             imageUrl: 'https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg',
-            price: 19.99
+            description: 'Description for ProductA',
+            price: 19.99,
+            stockQuantity: 100,
+            roomCategories: [],
+            furnitureTypeCategories: []
         },
         {
-            id: 5,
+            productId: 5,
             name: 'ProductB',
             imageUrl: 'https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg',
-            price: 29.99
+            description: 'Description for ProductB',
+            price: 29.99,
+            stockQuantity: 100,
+            roomCategories: [],
+            furnitureTypeCategories: []
         },
         {
-            id: 6,
+            productId: 6,
             name: 'ProductC',
             imageUrl: 'https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg',
-            price: 24.99
+            description: 'Description for ProductC',
+            price: 24.99,
+            stockQuantity: 100,
+            roomCategories: [],
+            furnitureTypeCategories: []
         },
         {
-            id: 7,
+            productId: 7,
             name: 'ProductA',
             imageUrl: 'https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg',
-            price: 19.99
+            description: 'Description for ProductA',
+            price: 19.99,
+            stockQuantity: 100,
+            roomCategories: [],
+            furnitureTypeCategories: []
         },
         {
-            id: 8,
+            productId: 8,
             name: 'ProductB',
             imageUrl: 'https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg',
-            price: 29.99
+            description: 'Description for ProductB',
+            price: 29.99,
+            stockQuantity: 100,
+            roomCategories: [],
+            furnitureTypeCategories: []
         },
         {
-            id: 9,
+            productId: 9,
             name: 'ProductC',
             imageUrl: 'https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg',
-            price: 24.99
-        },
+            description: 'Description for ProductC',
+            price: 24.99,
+            stockQuantity: 100,
+            roomCategories: [],
+            furnitureTypeCategories: []
+        }
         // Add more products as needed
     ];
+
     useEffect(() => {
     setProducts(hardCodedArrayOfProducts);
     }, []);
 
     // useEffect(() => {
-    //     fetch('/api/products')
+    //     fetch('/api/product/getAllProducts')
     //         .then(response => response.json())
     //         .then(data => {
     //             setProducts(date);
@@ -84,10 +121,14 @@ const Content = () => {
         <div className="Content">
             {products.map(product => (
                 <Product
-                    key={product.id}
+                    id={product.id}
                     name={product.name}
                     imageUrl={product.imageUrl}
+                    description={product.description}
                     price={product.price}
+                    stockQuantity={product.stockQuantity}
+                    roomCategories={product.roomCategories}
+                    furnitureTypeCategories={product.furnitureTypeCategories}
                 />
             ))}
         </div>

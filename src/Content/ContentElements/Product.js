@@ -3,10 +3,11 @@ import React from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import './Product.css';
 
-function Product({ id, name, description, price, categoryId, stockQuantity,imageUrl}) {
+function Product({ id, name, imageUrl, description, price, stockQuantity, roomCategories, furnitureTypeCategories}) {
     const navigate = useNavigate()
 
     const productInfoPageRedirector=()=>{
+        //probably need to make a slice for product so i can display info in productInfoPage
         navigate(`/product/${name}`);
     }
 
