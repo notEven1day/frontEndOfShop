@@ -155,3 +155,12 @@ const mockedProduct={
 }
 
 
+/cart/addProductToCart
+POST
+JSON.stringify({
+                cartId:cartId,
+                productId:productId,
+                quantity: quantity
+            }
+expects ok response
+
