@@ -8,7 +8,7 @@ function Product({ id, name, imageUrl, description, price, stockQuantity, roomCa
 
     const productInfoPageRedirector=()=>{
         //probably need to make a slice for product so i can display info in productInfoPage
-        navigate(`/product/${name}`);
+        navigate(`/product/${id}`);
     }
 
 
@@ -16,7 +16,7 @@ function Product({ id, name, imageUrl, description, price, stockQuantity, roomCa
 
         <div onClick={productInfoPageRedirector} className="Product" >
             <img src={imageUrl} />
-            <div className="product-details">
+            <div className="product-details-homepage">
                 <h3>{name}</h3>
                 <p>Price: ${price}</p>
             </div>

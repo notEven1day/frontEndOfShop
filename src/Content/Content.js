@@ -305,6 +305,8 @@ const Content = () => {
     //         })
     //         .catch(error => console.error('Error fetching products:', error));
     // }, []);
+    // some fields might not be need but i wont fix it yet
+
 
     const indexOfLastProduct=currentPage*productsPerPage;
     const indexOfFirstProduct=indexOfLastProduct-productsPerPage;
@@ -322,7 +324,7 @@ const Content = () => {
         <div className="Content">
             {currentProducts.map(product => (
                 <Product
-                    id={product.id}
+                    id={product.productId}
                     name={product.name}
                     imageUrl={product.imageUrl}
                     description={product.description}

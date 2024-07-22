@@ -1,83 +1,80 @@
 .product-info {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
     display: flex;
     flex-direction: column;
-    max-width: 350px;
-    margin: 10px;
-}
-
-.product-image {
-    width: 100%;
-    height: auto;
+    align-items: center;
+    padding: 20px;
 }
 
 .product-details {
-    padding: 15px;
+    display: flex;
+    width: 100%;
+    max-width: 80%;
+    margin: 20px 0;
 }
 
-.product-name {
-    font-size: 1.5em;
-    margin: 0;
+.imageContainer {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+    align-items: center;
+}
+
+.imageContainer img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.otherProductInfoContainer {
+    flex: 0 0 60%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-info h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.product-info p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.buyingSection {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.quantity-input {
+    width: 60px;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1rem;
 }
 
 .product-description {
-    color: #555;
-}
-
-.product-price {
-    font-size: 1.2em;
-    color: #000;
-    margin: 10px 0;
-}
-
-.product-stock {
-    color: #777;
-    margin-bottom: 10px;
-}
-
-.product-room-categories, .product-furniture-categories {
-    margin-top: 15px;
-}
-
-.product-room-categories h4, .product-furniture-categories h4 {
-    margin: 0 0 10px;
-}
-
-.product-room-categories ul, .product-furniture-categories ul {
-    list-style: none;
-    padding: 0;
-}
-
-.product-room-categories li, .product-furniture-categories li {
-    background: #f4f4f4;
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
-}
-
-.product-actions {
-    display: flex;
-    align-items: center;
+    max-width: 1200px;
+    font-size: 1rem;
+    line-height: 1.5;
     margin-top: 20px;
 }
 
-.quantity-selector {
-    width: 60px;
+.quantity-input {
+    height: 40%; /* Increased height */
     margin-right: 10px;
-    text-align: center;
+    padding: 5px;
+    font-size: 1.2rem; /* Increased font size */
 }
 
-.add-to-cart-button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.add-to-cart-button:hover {
-    background-color: #0056b3;
+.buyingSection .ant-btn {
+    height: 40%; /* Increased height */
+    font-size: 1.2rem; /* Increased font size */
+    padding: 0 20px; /* Increased padding */
 }

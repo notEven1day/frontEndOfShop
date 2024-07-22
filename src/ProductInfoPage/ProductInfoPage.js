@@ -7,13 +7,12 @@ import ProductInfoComponent from "./ProductInfoComponent";
 
 
 const ProductInfoPage = () => {
+    const { id } = useParams();
     return (
         <>
             <Header/>
-            <ProductInfoComponent></ProductInfoComponent>
-            //absolutely fucked everything here need to create a slice for product so i dont fetch
+            <ProductInfoComponent productId={id}></ProductInfoComponent>
             <Footer/>
-            //to do fix the layout
         </>
     );
 }

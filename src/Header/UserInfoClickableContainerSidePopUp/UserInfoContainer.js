@@ -39,10 +39,11 @@ const UserInfoContainer = () => {
     };
     const cartId = useSelector((state) => state.cartId.cartId);
     //cartId is property of cartId reducer
-    const [cart, setCart] = useState(null);
+    const [cart, setCart] = useState(mockCartData);
+    //NEED TO CHANGE THE USESTATE TO "" WHEN BACKEND READY
     useEffect(() => {
-        if (cartId) {
-            fetch('/cart/getCartById', {
+        console.log('Cart ID:', cartId);
+        fetch('/cart/getCartById', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -60,15 +61,12 @@ const UserInfoContainer = () => {
                     }
                 })
                 .catch(error => console.error('Error:', error));
-        } else {
-            console.log("penis");
-            console.log(cartId);
-            setCart(mockCartData); // Simulate fetching cart data
-        }
+
     }, [cartId]);
-
-
     //TO DO neex to fix this shit when backendready
+    // also need to display cart is empty
+
+
     const handleRemovalFromCart = (cartId,cartItemId) =>
     {
         fetch('/cart/removeCartItem', {
@@ -95,27 +93,40 @@ const UserInfoContainer = () => {
     // Generate menu items from cart data
     const menuItems = (
         <Menu>
-            {cart && cart.cartItems.map((item, index) => (
-                <Menu.Item key={index}>
-                    <ProductInCart
-                        id={item.cartItemId}
-                        imageUrl={item.product.imageUrl}
-                        name={item.product.name}
-                        price={item.product.price}
-                        quantity={item.quantity}
-
-                    />
-                    <Button block={true} onClick={handleRemovalFromCart(cartId,item.cartItemId)}>Remove from cart</Button>
+            {cart && cart.cartItems.length > 0 ? (
+                <>
+                    {cart.cartItems.map((item, index) => (
+                        <Menu.Item key={index}>
+                            <ProductInCart
+                                id={item.cartItemId}
+                                imageUrl={item.product.imageUrl}
+                                name={item.product.name}
+                                price={item.product.price}
+                                quantity={item.quantity}
+                            />
+                            <Button
+                                block
+                                onClick={() => handleRemovalFromCart(cartId, item.cartItemId)}
+                            >
+                                Remove from cart
+                            </Button>
+                        </Menu.Item>
+                    ))}
+                    <Menu.Item key="checkout">
+                        <Button type="primary" block>Go to checkout</Button>
+                    </Menu.Item>
+                    <Menu.Item key="total">
+                        <p>Total: ${cart.cartItems.reduce((sum, item) => sum + (item.product.price * item.quantity), 0).toFixed(2)}</p>
+                    </Menu.Item>
+                </>
+            ) : (
+                <Menu.Item key="empty">
+                    <p>Your cart is empty.</p>
                 </Menu.Item>
-            ))}
-            <Menu.Item key="checkout">
-                <Button type="primary" block>Go to checkout</Button>
-            </Menu.Item>
-            <Menu.Item key="total">
-                <p>Total: ${cart && cart.cartItems.reduce((sum, item) => sum + (item.product.price * item.quantity), 0).toFixed(2)}</p>
-            </Menu.Item>
+            )}
         </Menu>
     );
+
     //this shit fucking closes when editing quantity
     return (
         <div className='UserInfoContainer'>

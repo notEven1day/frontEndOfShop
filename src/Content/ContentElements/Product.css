@@ -19,16 +19,16 @@
     /*otkacham tuka ima nekyw space otdolu w kontainera nqqm ideq kak da go mahna*/
 }
 
-.product-details {
+.product-details-homepage {
     margin-top: 10px;
 }
 
-.product-details h3 {
+.product-details-homepage h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 20px;
 }
 
-.product-details p {
+.product-details-homepage p {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
 }

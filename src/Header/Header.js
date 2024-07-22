@@ -1,10 +1,20 @@
 import React, {useEffect} from 'react';
-import { useDispatch } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from "react-router-dom";
 import { setCartId } from '../../src/cartIdSlice';
 import './Header.css';
 import UserInfoContainer from "./UserInfoClickableContainerSidePopUp/UserInfoContainer";
 import AdminUserPageNavInNavbar from "../AdminUserPage/AdminUserPageNavInNavbar";
+import {
+    setEmail,
+    setFirstName,
+    setId,
+    setLastName,
+    setPhoneNumber,
+    setProfilePicUrl,
+    setRole,
+    setUsername
+} from "../userSlice";
 
 
 const Header = () =>{
@@ -33,6 +43,17 @@ const Header = () =>{
         role: "ADMIN",
         cartId: 7,
     };
+    useEffect(() => {
+        dispatch(setId(userDto.id));
+        dispatch(setUsername(userDto.username));
+        dispatch(setFirstName(userDto.firstName));
+        dispatch(setLastName(userDto.lastName));
+        dispatch(setEmail(userDto.email));
+        dispatch(setPhoneNumber(userDto.phoneNumber));
+        dispatch(setProfilePicUrl(userDto.profilePicUrl));
+        dispatch(setRole(userDto.role));
+        dispatch(setCartId(userDto.cartId));
+    }, [dispatch,userDto.cartId]);
 
     // useEffect(() => {
     //     fetch('/user/me', {
@@ -43,20 +64,21 @@ const Header = () =>{
     //     })
     //         .then(response => response.json()) //TO DO need to make a slice for whole current user
     //         .then(data => {
-    //             userDto.id=data.id;
-    //             userDto.username=data.username;
-    //             userDto.firstName = data.firstName;
-    //             userDto.lastName = data.lastName;
-    //             userDto.email = data.email;
-    //             userDto.phoneNumber = data.phoneNumber;
-    //             userDto.profilePicUrl=data.profilePicUrl;
-    //             userDto.role = data.role;
+    //             dispatch(setId(data.id));
+    //             dispatch(setUsername(data.username));
+    //             dispatch(setFirstName(data.firstName));
+    //             dispatch(setLastName(data.lastName));
+    //             dispatch(setEmail(data.email));
+    //             dispatch(setPhoneNumber(data.phoneNumber));
+    //             dispatch(setProfilePicUrl(data.profilePicUrl));
+    //             dispatch(setRole(data.role));
     //             dispatch(setCartId(data.cartId));
     //             // might be a big problem tbh need to check later when backend ready
-    //         })
+    //         }).problem{dispatch(clearUsername())................}
     //         .catch(error => console.error('Error:', error));
     // }, [dispatch]);
-
+    // also need to change line 91 userDto.role.includes("ADMIN") to userSlice.includes("ADMIN") when backend ready
+    //401 means token expired
 
     return (
         <header className='Header'>
