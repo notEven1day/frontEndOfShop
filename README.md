@@ -139,3 +139,19 @@ cartId:cartId,
 cartItemId: id,
 quantity:updatedQuantity
 expects an ok response
+
+/product/getCurrentViewedProduct
+POST
+JSON.stringify({
+               productId:productId
+            })
+expects a single entity response in the following format
+const mockedProduct={
+        name: 'ProductC',
+        imageUrl: 'https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg',
+        description: 'Description for ProductC',
+        price: 24.99,
+        stockQuantity: 100
+}
+
+
