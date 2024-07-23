@@ -8,6 +8,8 @@ import Login from "./LoginPage/Login";
 import SignUp from "./SignUpPage/SignUp";
 import AdminUserPage from "./AdminUserPage/AdminUserPage";
 import AboutUsPage from "./AboutUsPage/AboutUsPage";
+import AdminConsole from "./AdminConsole/AdminConsole";
+import ProductUpdateForm from "./ProductUpdateForm/ProductUpdateForm";
 
 const App = () => {
     return (
@@ -19,6 +21,12 @@ const App = () => {
                 <Route path="/signUp" exact element = {<SignUp />} />
                 <Route path="/adminUserPage" exact element = {<AdminUserPage />} />
                 <Route path="/aboutUs" exact element = {<AboutUsPage/>} />
+                <Route path="/adminConsole" exact element = {<AdminConsole/>} />
+                <Route path="/updateProduct/:productId" exact element = {<ProductUpdateForm/>} />
+
+
+
+
 
                 {/* Add more routes as needed */}
             </Routes>

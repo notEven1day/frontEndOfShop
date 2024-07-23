@@ -5,6 +5,9 @@ import './UserInfoContainer.css';
 import { Button, Dropdown, Menu } from "antd";
 import ProductInCart from "./ProductInCart";
 import {useSelector} from "react-redux";
+import AdminUserPageNavInNavbar from "../../AdminUserPage/AdminUserPageNavInNavbar";
+import {userSlice} from "../../userSlice";
+import LoggedUserRepresentation from "./LoggedUserRepresentation";
 
 const mockCartData = {
     cartId: 1,
@@ -34,9 +37,11 @@ const mockCartData = {
 
 const UserInfoContainer = () => {
     const navigate = useNavigate();
+
     const handleUserInfoClick = () => {
         navigate(`/login`);
     };
+    const user = useSelector((state) => state.user);
     const cartId = useSelector((state) => state.cartId.cartId);
     //cartId is property of cartId reducer
     const [cart, setCart] = useState(mockCartData);
@@ -133,7 +138,11 @@ const UserInfoContainer = () => {
             <Dropdown overlay={menuItems} trigger={['click']} placement="bottomRight">
                 <ShoppingCartOutlined className="ShoppingCartIcon" />
             </Dropdown>
-            <UserOutlined onClick={handleUserInfoClick} />
+            {user === null ? (
+                <UserOutlined onClick={handleUserInfoClick} />
+            ) : (
+                <LoggedUserRepresentation/>
+            )}
         </div>
     );
 };

@@ -8,3 +8,4 @@ const AdminUserPageNavInNavbar = () =>{
     );
 }
 export default AdminUserPageNavInNavbar;
+//prob a useless class

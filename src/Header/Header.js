@@ -28,18 +28,23 @@ const Header = () =>{
     {
         navigate(`/aboutUs`);
     }
+    const handleAdminConsoleRedirection = () =>
+    {
+        navigate(`/adminConsole`)
+    }
     const handleAdminUserPageRedirection = () =>
     {
         navigate(`/adminUserPage`);
     }
+
     const userDto = {
-        id:"",
-        username:"",
-        firstName: "",
-        lastName: "",
-        email: "",
-        phoneNumber: "",
-        profilePicUrl:"",
+        id:"12",
+        username:"goshochipsa",
+        firstName: "gosho",
+        lastName: "petrow",
+        email: "skara@gmail.com",
+        phoneNumber: "0888888888",
+        profilePicUrl:"https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF1000,1000_QL80_.jpg",
         role: "ADMIN",
         cartId: 7,
     };
@@ -53,7 +58,7 @@ const Header = () =>{
         dispatch(setProfilePicUrl(userDto.profilePicUrl));
         dispatch(setRole(userDto.role));
         dispatch(setCartId(userDto.cartId));
-    }, [dispatch,userDto.cartId]);
+    }, [dispatch,userDto]);
 
     // useEffect(() => {
     //     fetch('/user/me', {
@@ -79,7 +84,7 @@ const Header = () =>{
     // }, [dispatch]);
     // also need to change line 91 userDto.role.includes("ADMIN") to userSlice.includes("ADMIN") when backend ready
     //401 means token expired
-
+    //move this to app/js when backend done
     return (
         <header className='Header'>
 
@@ -90,7 +95,13 @@ const Header = () =>{
                     <li>Products</li>
                     <li>Contact</li>
                     {userDto.role.includes("ADMIN") &&
-                        <li onClick={handleAdminUserPageRedirection} ><AdminUserPageNavInNavbar/></li>}
+                        <>
+                            <li onClick={handleAdminConsoleRedirection}>Admin console</li>
+                            <li onClick={handleAdminUserPageRedirection}>
+                                <AdminUserPageNavInNavbar />
+                            </li>
+                        </>
+                    }
                 </ul>
             </nav>
 

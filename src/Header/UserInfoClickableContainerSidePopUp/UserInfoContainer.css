@@ -1,5 +1,7 @@
 .UserInfoContainer{
     padding-right: 75px;
+    display: flex;
+    justify-content: space-between;
 }
 .ShoppingCartIcon{
     padding-right: 20px;
