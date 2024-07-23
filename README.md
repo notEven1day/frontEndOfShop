@@ -164,3 +164,7 @@ JSON.stringify({
             }
 expects ok response
 
+/products/getAllProducts
+get 
+returns all products with all fields 
+
