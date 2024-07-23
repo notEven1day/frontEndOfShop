@@ -168,3 +168,10 @@ expects ok response
 get 
 returns all products with all fields 
 
+
+
+/product/getProductToUpdate
+POST
+productId: productId
+returns all info for product
+
